@@ -1,4 +1,7 @@
 .App {
+  position: fixed;
+  top: 0;
+  left: 0;
   color: var(--text-color);
   background-color: var(--background-color);
   height: 100vh;
