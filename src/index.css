@@ -24,3 +24,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --primary-color: #0a2463 /* Royal blue (traditional) */;
+  --secondary-color: #3e92cc; /* Celestial blue */
+  --accent-color: #d8315b; /* Cerise */
+  --background-color: #ffffff; /* White */
+  --text-color: #1e1b18; /* Eerie black */
+}
