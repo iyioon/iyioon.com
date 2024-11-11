@@ -35,7 +35,7 @@ code {
 }
 
 :root {
-  --primary-color: #0a2463; /* Royal blue (traditional) */
+  --primary-color: #000000; /* Royal blue (traditional) */
   --secondary-color: #3e92cc; /* Celestial blue */
   --accent-color: #d8315b; /* Cerise */
   --background-color: #f8f8f8; /* White */

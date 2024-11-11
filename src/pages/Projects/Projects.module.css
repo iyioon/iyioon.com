@@ -1,0 +1,10 @@
+.projects {
+  width: 100%;
+  overflow: hidden;
+  padding: var(--padding-large);
+  padding-top: calc(var(--padding-large) * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--padding-large);
+}

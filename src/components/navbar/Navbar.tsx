@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navitem = [
   {
-    name: "Project",
-    link: "/project",
+    name: "Projects",
+    link: "/projects",
     subnav: [
       {
         name: "Archive",
-        link: "/project/web",
+        link: "/project/archive",
       },
       {
         name: "Design",
-        link: "/project/mobile",
+        link: "/project/aesign",
       },
       {
         name: "Desktop",
-        link: "/project/desktop",
+        link: "/project/aesktop",
       },
     ],
   },
@@ -46,6 +48,7 @@ const navitem = [
 
 function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [activeParentLink, setActiveParentLink] = useState<string | null>(null);
 
   // If the content is scrolled, change the navbar style
   // and remove top margin from the content
@@ -106,10 +109,34 @@ function Navbar() {
       ?.classList.remove(styles.bottomExpanded);
   };
 
+  const handleLinkClick = () => {
+    // Reset the navbar to its original state
+    setActiveParentLink(null);
+    handleMouseLeave();
+  };
+
+  // Check if the parent link is active
+  // If the parent link is active, set the active parent link
+  // This is used to keep the parent link active when the user is on a subnav link
+  const handleSubLinkClick = (link: string) => {
+    const parentLink = navitem.find((item) =>
+      item.subnav?.find((subItem) => subItem.link === link)
+    )?.link;
+
+    if (parentLink) {
+      setActiveParentLink(parentLink);
+    }
+
+    // Reset the navbar to its original state
+    handleMouseLeave();
+  };
+
   return (
     <div className={styles.navbar}>
       <div className={styles.top}>
-        <div className={`${styles.logo} hoverGlowText`}>iyioon</div>
+        <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
+          <div className={`${styles.logo} hoverGlowText`}>iyioon</div>
+        </Link>
         <div className={styles.navlist}>
           {navitem.map((item, index) => (
             <div
@@ -120,7 +147,23 @@ function Navbar() {
               onMouseEnter={() => handleMouseEnter(item.name)}
               onMouseLeave={handleMouseLeave}
             >
-              {item.name}
+              <NavLink
+                to={item.link}
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.navLinkActive : ""}
+                ${
+                  // If one of the child links is active,
+                  // keep the parent link active but with a different style
+                  item.link === activeParentLink
+                    ? styles.navLinkParentActive
+                    : ""
+                }
+                `
+                }
+                onClick={handleLinkClick}
+              >
+                {item.name}
+              </NavLink>
             </div>
           ))}
         </div>
@@ -139,7 +182,17 @@ function Navbar() {
               .find((item) => item.name === hoveredItem)
               ?.subnav?.map((subItem, index) => (
                 <div key={index} className={styles.subnavItem}>
-                  {subItem.name}
+                  <NavLink
+                    to={subItem.link}
+                    onClick={() => handleSubLinkClick(subItem.link)}
+                    className={({ isActive }) =>
+                      `${styles.subnavLink} ${
+                        isActive ? styles.subnavLinkActive : ""
+                      }`
+                    }
+                  >
+                    {subItem.name}
+                  </NavLink>
                 </div>
               ))}
         </div>

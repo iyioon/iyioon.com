@@ -48,6 +48,11 @@
   transform: translate(0, -3px);
 }
 
+.logoLink {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
 .navlist {
   display: flex;
   justify-content: center;
@@ -68,9 +73,24 @@
 }
 
 .navitemHovered {
-  border-bottom: 2px solid var(--primary-color);
+  /* border-bottom: 2px solid var(--primary-color); */
   /* Dont affect size */
-  padding-bottom: calc(var(--padding-medium) - 2px);
+  /* padding-bottom: calc(var(--padding-medium) - 2px); */
+  color: var(--primary-color);
+}
+
+.navLink {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navLinkActive {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.navLinkParentActive {
+  text-decoration: underline;
 }
 
 .rightspacing {
@@ -120,6 +140,16 @@
   opacity: 0;
   animation: fadeInFromTop var(--transition-duration) var(--transition-curve)
     forwards;
+}
+
+.subnavLink {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.subnavLinkActive {
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 /* Delay each item's animation */
