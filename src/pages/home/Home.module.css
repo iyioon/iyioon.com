@@ -1,0 +1,30 @@
+.home {
+  width: 100%;
+  overflow: hidden;
+  padding: var(--padding-large);
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--padding-large);
+}
+
+.thumbnail {
+  height: 500px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  background-color: rgb(255, 255, 255);
+  background-image: url("./assets/golden.jpeg");
+  background-position: center;
+  background-size: cover;
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.thumbnail h1 {
+  font-size: 80px;
+  font-weight: bold;
+  color: var(--background-color);
+}
