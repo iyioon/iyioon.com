@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const navitem = [
   {
@@ -49,6 +51,7 @@ const navitem = [
 function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeParentLink, setActiveParentLink] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // If the content is scrolled, change the navbar style
   // and remove top margin from the content
@@ -76,6 +79,9 @@ function Navbar() {
   }, []);
 
   const handleMouseEnter = (itemName: string) => {
+    // Dont do for mobile menu
+    if (menuOpen) return;
+
     // Dont do anything if the current item does not have subnav
     const item = navitem.find((item) => item.name === itemName);
     if (!item?.subnav) return;
@@ -98,6 +104,9 @@ function Navbar() {
   };
 
   const handleMouseLeave = () => {
+    // Dont do for mobile menu
+    if (menuOpen) return;
+
     // Reset the navbar to its original state
     setHoveredItem(null);
     document
@@ -112,7 +121,30 @@ function Navbar() {
   const handleLinkClick = () => {
     // Reset the navbar to its original state
     setActiveParentLink(null);
-    handleMouseLeave();
+
+    // For mobile menu
+    setMenuOpen(false);
+
+    // Reset the navbar to its original state
+    setHoveredItem(null);
+    document
+      .querySelector(`.${styles.navbar}`)
+      ?.classList.remove(styles.navbarExpanded);
+    document.querySelector(".content")?.classList.remove("content-zoomed");
+    document
+      .querySelector(`.${styles.bottom}`)
+      ?.classList.remove(styles.bottomExpanded);
+  };
+
+  // For mobile menu Click
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    const navbar = document.querySelector(`.${styles.navbar}`);
+    navbar?.classList.toggle(styles.navbarExpanded);
+    document.querySelector(".content")?.classList.toggle("content-zoomed");
+    document
+      .querySelector(`.${styles.bottom}`)
+      ?.classList.toggle(styles.bottomExpanded);
   };
 
   // Check if the parent link is active
@@ -167,6 +199,9 @@ function Navbar() {
             </div>
           ))}
         </div>
+        <div className={styles.menuButton} onClick={toggleMenu}>
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+        </div>
         <div className={styles.rightspacing}>iyioon</div>
       </div>
 
@@ -196,6 +231,27 @@ function Navbar() {
                 </div>
               ))}
         </div>
+
+        {/* For mobile menu */}
+        {menuOpen && (
+          <div className={styles.navlistMobile}>
+            {navitem.map((item, index) => (
+              <div key={index} className={styles.navitemMobile}>
+                <NavLink
+                  to={item.link}
+                  className={({ isActive }) =>
+                    `${styles.navLinkMobile} ${
+                      isActive ? styles.navLinkActiveMobile : ""
+                    }`
+                  }
+                  onClick={toggleMenu}
+                >
+                  {item.name}
+                </NavLink>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

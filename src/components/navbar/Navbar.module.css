@@ -18,7 +18,7 @@
 }
 
 .navbarExpanded {
-  height: 100vh;
+  height: 100dvh;
   background-color: rgba(var(--background-color-rgb), 0.5);
   backdrop-filter: blur(10px);
 }
@@ -59,7 +59,6 @@
   align-items: center;
   list-style: none;
   width: 60%;
-  transition: width var(--transition-duration) var(--transition-curve);
 }
 
 .navitem {
@@ -90,7 +89,8 @@
 }
 
 .navLinkParentActive {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  font-weight: bold;
 }
 
 .rightspacing {
@@ -174,11 +174,101 @@
   .navlist {
     width: 100%;
   }
+
+  .top {
+    padding-left: var(--padding-medium);
+    padding-right: var(--padding-medium);
+  }
+}
+
+/* For non-touchscreen devices */
+.menuButton {
+  display: none;
+  cursor: pointer;
+}
+
+.navlistMobile {
+  width: 100%;
+  padding: var(--padding-small);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--padding-large);
+}
+
+.navLinkMobile {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: var(--h2);
+}
+
+.navLinkActiveMobile {
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
   .navlist {
-    width: 100%;
+    display: none;
+  }
+
+  .top {
+    justify-content: space-between;
+    padding-left: var(--padding-small);
+    padding-right: var(--padding-small);
+  }
+
+  .rightspacing {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottomExpanded {
+    height: 100%;
+  }
+
+  .subnavList {
+    display: none;
+  }
+}
+
+/* For touchscreen devices */
+@media (pointer: coarse) {
+  .navlist {
+    display: none;
+  }
+
+  .top {
+    justify-content: space-between;
+  }
+
+  .menuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightspacing {
+    display: none;
+  }
+
+  /*  Dont show hover effect on touchscreens */
+  .logo:hover {
+    color: black;
+  }
+
+  .bottomExpanded {
+    height: 100%;
+  }
+
+  .subnavList {
+    display: none;
   }
 }
