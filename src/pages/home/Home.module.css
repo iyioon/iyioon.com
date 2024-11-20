@@ -41,3 +41,27 @@
     transform: scale(1);
   }
 }
+
+/* Tablet view (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+  .home {
+    padding: var(--padding-medium);
+  }
+
+  .thumbnail {
+    height: 400px;
+    padding: var(--padding-medium);
+  }
+}
+
+/* Mobile view (below 768px) */
+@media screen and (max-width: 768px) {
+  .home {
+    padding: var(--padding-small);
+  }
+
+  .thumbnail {
+    height: 300px;
+    padding: var(--padding-small);
+  }
+}
