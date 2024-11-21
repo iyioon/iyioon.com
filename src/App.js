@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Navbar from "./components/navbar/Navbar";
-import Projects from "./pages/Projects/Projects";
+import Projects from "./pages/projects/Projects";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PreloadAssets from "./utils/PreloadAssets";
 
@@ -50,7 +50,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home assets={assets} />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects assets={assets} />} />
           </Routes>
         </div>
       </Router>

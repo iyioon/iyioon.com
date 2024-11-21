@@ -32,6 +32,23 @@
   padding-left: var(--padding-large);
   padding-right: var(--padding-large);
   gap: var(--padding-large);
+
+  /* Appear animation */
+  opacity: 0;
+  transform: translateY(calc(var(--navbar-height) * -0.5));
+  animation: topFadeIn var(--transition-duration) var(--transition-curve)
+    forwards;
+}
+
+@keyframes topFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--navbar-height) * -0.5));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logo {

@@ -8,7 +8,7 @@ interface HomeProps {
 
 function Home({ assets }: HomeProps) {
   return (
-    <div className={styles.home}>
+    <div className={`${styles.home} zoomInFadeIn`}>
       <div className={`${styles.thumbnail}`}>
         {getPreloadedAsset(
           assets,

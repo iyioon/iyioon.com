@@ -19,7 +19,7 @@
 
 .cardContent {
   padding: var(--padding-large);
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.6);
   padding-right: 20%;
   position: relative;
   width: 100%;
@@ -79,9 +79,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231015/pngtree-abstract-background-and-texture-vibrant-red-oil-painting-brush-stroke-hand-image_13680695.png");
-  background-position: center;
-  background-size: cover;
 }
 
 @media (prefers-reduced-motion: no-preference) {

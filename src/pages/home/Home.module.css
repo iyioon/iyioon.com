@@ -2,14 +2,12 @@
   width: 100%;
   overflow: hidden;
   padding: var(--padding-large);
-  padding-top: 0;
+  padding-top: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--padding-large);
-  animation: zoomInFadeIn var(--transition-duration) var(--transition-curve)
-    forwards;
 }
 
 .thumbnail {
@@ -28,17 +26,6 @@
   font-size: 80px;
   font-weight: bold;
   color: var(--background-color);
-}
-
-@keyframes zoomInFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 /* Tablet view (768px to 1024px) */
