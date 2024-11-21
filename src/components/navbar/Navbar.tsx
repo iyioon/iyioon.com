@@ -200,7 +200,11 @@ function Navbar() {
           ))}
         </div>
         <div className={styles.menuButton} onClick={toggleMenu}>
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          {menuOpen ? (
+            <CloseIcon fontSize="inherit" />
+          ) : (
+            <MenuIcon fontSize="inherit" />
+          )}
         </div>
         <div className={styles.rightspacing}>iyioon</div>
       </div>
@@ -235,6 +239,19 @@ function Navbar() {
         {/* For mobile menu */}
         {menuOpen && (
           <div className={styles.navlistMobile}>
+            <div className={styles.navitemMobile}>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${styles.navLinkMobile} ${
+                    isActive ? styles.navLinkActiveMobile : ""
+                  }`
+                }
+                onClick={handleLinkClick}
+              >
+                Home
+              </NavLink>
+            </div>
             {navitem.map((item, index) => (
               <div key={index} className={styles.navitemMobile}>
                 <NavLink

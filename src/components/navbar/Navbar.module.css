@@ -185,22 +185,47 @@
 .menuButton {
   display: none;
   cursor: pointer;
+  font-size: var(--h1);
 }
 
 .navlistMobile {
   width: 100%;
-  padding: var(--padding-small);
+  padding: var(--padding-large);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
   gap: var(--padding-large);
+}
+
+.navitemMobile {
+  opacity: 0;
+  animation: fadeInFromTop var(--transition-duration) var(--transition-curve)
+    forwards;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .navitemMobile:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .navitemMobile:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .navitemMobile:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .navitemMobile:nth-child(4) {
+    animation-delay: 0.4s;
+  }
 }
 
 .navLinkMobile {
   color: var(--text-color);
   text-decoration: none;
-  font-size: var(--h2);
+  font-size: calc(var(--h1) + 30px);
 }
 
 .navLinkActiveMobile {
