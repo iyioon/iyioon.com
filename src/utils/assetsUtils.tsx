@@ -12,8 +12,8 @@ export const getPreloadedAsset = (
   link: string,
   // Optional style to apply to the asset.
   style?: React.CSSProperties,
-  // Additional props to apply to the asset (e.g. onClick).
-  additionalProps?: React.HTMLAttributes<HTMLElement>,
+  // Additional props
+  additionalProps?: React.VideoHTMLAttributes<HTMLVideoElement>,
   // Optional volume to set for the audio/video asset.
   volume?: number
 ) => {
