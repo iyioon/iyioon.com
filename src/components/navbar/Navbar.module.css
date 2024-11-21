@@ -35,22 +35,31 @@
 }
 
 .logo {
-  height: var(--navbar-height);
   cursor: pointer;
   font-family: Pacifico;
-  font-size: var(--h2);
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: var(--padding-small);
   padding-right: var(--padding-small);
-  font-size: var(--medium);
-  transform: translate(0, -3px);
+  font-size: var(--h4);
 }
 
 .logoLink {
   color: var(--text-color);
   text-decoration: none;
+  transform: translate(0, -3px);
+}
+
+.rightspacing {
+  font-family: Pacifico;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: var(--padding-small);
+  padding-right: var(--padding-small);
+  font-size: var(--h4);
+  color: rgba(0, 0, 0, 0);
 }
 
 .navlist {
@@ -91,17 +100,6 @@
 .navLinkParentActive {
   /* text-decoration: underline; */
   font-weight: bold;
-}
-
-.rightspacing {
-  font-family: Pacifico;
-  font-size: var(--h2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: var(--padding-small);
-  padding-right: var(--padding-small);
-  color: rgba(0, 0, 0, 0); /* Transparent */
 }
 
 .bottom {
@@ -262,6 +260,10 @@
   .subnavList {
     display: none;
   }
+
+  .logo {
+    font-size: var(--h3);
+  }
 }
 
 /* For touchscreen devices */
@@ -295,5 +297,9 @@
 
   .subnavList {
     display: none;
+  }
+
+  .logo {
+    font-size: var(--h3);
   }
 }

@@ -166,9 +166,11 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.top}>
-        <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
-          <div className={`${styles.logo} hoverGlowText`}>iyioon</div>
-        </Link>
+        <div className={`${styles.logo} hoverGlowText`}>
+          <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
+            iyioon
+          </Link>
+        </div>
         <div className={styles.navlist}>
           {navitem.map((item, index) => (
             <div
