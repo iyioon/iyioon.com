@@ -18,7 +18,7 @@
   left: 0;
   color: var(--text-color);
   background-color: var(--background-color);
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   overflow: auto;
   display: flex;
