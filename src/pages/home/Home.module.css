@@ -17,12 +17,11 @@
   width: 100%;
   border-radius: var(--border-radius);
   background-color: rgb(255, 255, 255);
-  background-image: url("./assets/golden.jpeg");
   background-position: center;
   background-size: cover;
-  padding: var(--padding-large);
   display: flex;
   flex-direction: column-reverse;
+  overflow: hidden;
 }
 
 .thumbnail h1 {

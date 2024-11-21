@@ -1,7 +1,6 @@
 .projects {
   width: 100%;
   overflow: hidden;
-  padding: var(--padding-large);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,15 +9,17 @@
 
 .card {
   position: relative;
-  width: 100%;
+  width: calc(100% - var(--padding-large) * 2);
   aspect-ratio: 16 / 9;
   border: 1px solid rgb(231, 231, 231);
   border-radius: var(--border-radius);
   overflow: hidden;
+  margin: var(--padding-large);
 }
 
 .cardContent {
   padding: var(--padding-large);
+  background-color: rgba(255, 255, 255, 0.3);
   padding-right: 20%;
   position: relative;
   width: 100%;
@@ -28,7 +29,6 @@
   justify-content: center;
   align-items: center;
   gap: var(--padding-medium);
-  background-color: rgba(207, 0, 0, 0.8);
   z-index: 2;
   color: black;
   font-family: serif;
@@ -39,7 +39,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: var(--padding-large);
+  padding: 5%;
+  padding-top: 3.5%;
   font-size: 1.8em;
   font-weight: 100;
 }
@@ -78,21 +79,41 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/golden.jpeg");
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231015/pngtree-abstract-background-and-texture-vibrant-red-oil-painting-brush-stroke-hand-image_13680695.png");
   background-position: center;
   background-size: cover;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .cardBackground {
+    animation: zooming-background 30s infinite linear;
+  }
+}
+
+@keyframes zooming-background {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
-  .projects {
-    padding: var(--padding-medium);
+  .card {
+    width: calc(100% - var(--padding-medium) * 2);
+    margin: var(--padding-medium);
   }
 }
 
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
-  .projects {
-    padding: var(--padding-small);
+  .card {
+    width: calc(100% - var(--padding-small) * 2);
+    margin: var(--padding-small);
   }
 }
