@@ -194,12 +194,17 @@
 
 .navlistMobile {
   width: 100%;
+  height: calc(100% - var(--navbar-height));
   display: flex;
   flex-direction: column;
   align-items: end;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--padding-large);
   padding-top: var(--padding-large);
+  overflow-y: auto;
+  /* Hide scrollbar while maintaining functionality */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .navitemMobile {

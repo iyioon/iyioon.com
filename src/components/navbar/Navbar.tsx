@@ -89,7 +89,7 @@ function Navbar() {
     // Else, set the hovered item and expand the navbar
     setHoveredItem(itemName);
 
-    // Set navbar to full width
+    // Set navbar to full height
     document
       .querySelector(`.${styles.navbar}`)
       ?.classList.add(styles.navbarExpanded);

@@ -11,6 +11,7 @@ function App() {
   const [isAssetsloading, setIsAssetsLoading] = useState(true);
   const [assetLoadProgress, setAssetLoadProgress] = useState(0);
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
+  const [isLoadingDisappearing, setIsLoadingDisappearing] = useState(false);
 
   // Preload assets
   useEffect(() => {
@@ -28,7 +29,11 @@ function App() {
   useEffect(() => {
     if (!isAssetsloading) {
       setTimeout(() => {
-        setShowLoadingScreen(false);
+        setIsLoadingDisappearing(true);
+        // Wait for loading screen animation to finish
+        setTimeout(() => {
+          setShowLoadingScreen(false);
+        }, 500);
       }, 1000);
     }
   }, [isAssetsloading]);
@@ -36,7 +41,7 @@ function App() {
   // Show loading screen while assets are loading + delay
   if (showLoadingScreen) {
     return (
-      <div className="loading">
+      <div className={`loading ${isLoadingDisappearing ? "loading-hide" : ``}`}>
         <h1>iyioon</h1>
         <h3>{assetLoadProgress.toFixed(2)}%</h3>
       </div>

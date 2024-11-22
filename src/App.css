@@ -10,6 +10,11 @@
   padding: calc(var(--padding-large) * 2);
   padding-left: 10%;
   font-family: serif;
+  transition: opacity var(--transition-duration) var(--transition-curve);
+}
+
+.loading-hide {
+  opacity: 0;
 }
 
 .App {

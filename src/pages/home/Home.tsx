@@ -10,7 +10,7 @@ function Home({ assets }: HomeProps) {
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={`${styles.thumbnail}`}>
-        {getPreloadedAsset(
+        {/* {getPreloadedAsset(
           assets,
           "wave.mp4",
           {
@@ -26,7 +26,7 @@ function Home({ assets }: HomeProps) {
             playsInline: true,
           },
           0
-        )}
+        )} */}
       </div>
     </div>
   );
