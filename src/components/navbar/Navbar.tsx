@@ -222,7 +222,13 @@ function Navbar() {
             navitem
               .find((item) => item.name === hoveredItem)
               ?.subnav?.map((subItem, index) => (
-                <div key={index} className={styles.subnavItem}>
+                <div
+                  // Force re-render when the hovered item changes by
+                  // adding the hovered item to the key.
+                  // key={`${index}-${hoveredItem}`}
+                  key={index}
+                  className={styles.subnavItem}
+                >
                   <NavLink
                     to={subItem.link}
                     onClick={() => handleSubLinkClick(subItem.link)}
