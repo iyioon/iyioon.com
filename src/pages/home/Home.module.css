@@ -1,25 +1,42 @@
 .home {
   width: 100%;
   overflow: hidden;
-  padding: var(--padding-large);
-  padding-top: 0 !important;
+}
+
+.homeFirstPage {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--padding-large);
+  align-items: start;
+  width: 53%;
+  margin-left: 47%;
+  padding-top: 10%;
+}
+
+.homeFirstPageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: var(--padding-medium);
+}
+
+.homeTitle {
+  font-size: 150px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.homeSubtitle {
+  font-weight: bold;
+}
+
+.homeDate {
+  color: var(--text-gray);
 }
 
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
-  .home {
-    padding: var(--padding-medium);
-  }
 }
 
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
-  .home {
-    padding: var(--padding-small);
-  }
 }

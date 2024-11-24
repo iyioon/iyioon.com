@@ -41,7 +41,17 @@ function AppContent() {
 
       return () => content.removeEventListener("scroll", handleScroll);
     }
-  }, [location.pathname]);
+  }, [location.pathname, showLoadingScreen]);
+
+  const scrollToTop = () => {
+    const content = document.querySelector(".content");
+    if (content) {
+      content.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
   // Preload assets
   useEffect(() => {
@@ -72,8 +82,11 @@ function AppContent() {
   if (showLoadingScreen) {
     return (
       <div className={`loading ${isLoadingDisappearing ? "loading-hide" : ``}`}>
-        <h1>iyioon</h1>
-        <h3>{assetLoadProgress.toFixed(2)}%</h3>
+        <div className="loadingProgress">{assetLoadProgress.toFixed(2)}%</div>
+        <div className="loadingBottomText">
+          <p>LOADING...</p>
+          <p>MOON JI HOON - PORTFOLIO</p>
+        </div>
       </div>
     );
   }
@@ -88,7 +101,9 @@ function AppContent() {
           <Route path="/about" element={<About assets={assets} />} />
         </Routes>
       </div>
-      <div className="scroll-indicator">{scrollPercentage}%</div>
+      <div className="scroll-indicator" onClick={scrollToTop}>
+        {scrollPercentage}%
+      </div>
     </div>
   );
 }
