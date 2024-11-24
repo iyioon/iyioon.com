@@ -9,8 +9,21 @@
   justify-content: center;
   padding: calc(var(--padding-large) * 2);
   padding-left: 10%;
-  font-family: serif;
   transition: opacity var(--transition-duration) var(--transition-curve);
+}
+
+.scroll-indicator {
+  position: fixed;
+  bottom: var(--padding-small);
+  left: var(--padding-small);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  z-index: 1000;
+  pointer-events: none;
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 30px;
 }
 
 .loading-hide {

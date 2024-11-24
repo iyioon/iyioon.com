@@ -10,32 +10,32 @@ interface ProjectsProps {
 function Projects({ assets }: ProjectsProps) {
   return (
     <div className={`${styles.projects} zoomInFadeIn`}>
-      <ProjectCard
-        date="13 December 2024"
-        episode="Episode.01"
-        title="ARCHIVE"
-        description="The Knowledge Base"
-        assets={assets}
-        bg="wave.mp4"
-      />
-
-      <ProjectCard
-        date="13 December 2024"
-        episode="Episode.01"
-        title="ARCHIVE"
-        description="The Knowledge Base"
-        assets={assets}
-        bg="wave.mp4"
-      />
-
-      <ProjectCard
-        date="13 December 2024"
-        episode="Episode.01"
-        title="ARCHIVE"
-        description="The Knowledge Base"
-        assets={assets}
-        bg="wave.mp4"
-      />
+      <div className={styles.cardsHolder}>
+        <ProjectCard
+          date="13 December 2024"
+          episode="Episode.01"
+          title="ARCHIVE"
+          description="The Knowledge Base"
+          assets={assets}
+          bg="wave.mp4"
+        />
+        <ProjectCard
+          date="13 December 2024"
+          episode="Episode.01"
+          title="ARCHIVE"
+          description="The Knowledge Base"
+          assets={assets}
+          bg="wave.mp4"
+        />
+        <ProjectCard
+          date="13 December 2024"
+          episode="Episode.01"
+          title="ARCHIVE"
+          description="The Knowledge Base"
+          assets={assets}
+          bg="wave.mp4"
+        />
+      </div>
     </div>
   );
 }

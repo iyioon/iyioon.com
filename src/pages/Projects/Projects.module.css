@@ -7,14 +7,22 @@
   gap: var(--padding-large);
 }
 
+.cardsHolder {
+  padding: var(--padding-large);
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   position: relative;
-  width: calc(100% - var(--padding-large) * 2);
+  height: calc(100vh - var(--navbar-height));
   aspect-ratio: 16 / 9;
   border: 1px solid rgb(231, 231, 231);
   border-radius: var(--border-radius);
   overflow: hidden;
-  margin: var(--padding-large);
 }
 
 .cardContent {
@@ -31,7 +39,6 @@
   gap: var(--padding-medium);
   z-index: 2;
   color: black;
-  font-family: serif;
   font-size: 1em;
 }
 
@@ -101,16 +108,20 @@
 
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
+  .cardsHolder {
+    padding: var(--padding-medium);
+  }
+
   .card {
-    width: calc(100% - var(--padding-medium) * 2);
-    margin: var(--padding-medium);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9 !important;
   }
 }
 
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
-  .card {
-    width: calc(100% - var(--padding-small) * 2);
-    margin: var(--padding-small);
+  .cardsHolder {
+    padding: var(--padding-small);
   }
 }
