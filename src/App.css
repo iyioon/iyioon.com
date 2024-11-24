@@ -53,19 +53,10 @@
   opacity: 0;
 }
 
-.scroll-indicator {
-  position: fixed;
-  bottom: var(--padding-small);
-  left: var(--padding-small);
-  font-size: 14px;
-  z-index: 10;
-  pointer-events: auto;
-  cursor: pointer;
-  color: white;
-  mix-blend-mode: difference;
-  font-size: 30px;
-  animation: zoomInFadeIn var(--transition-duration) var(--transition-curve)
-    forwards;
+@media (hover: none) and (pointer: coarse) {
+  .App {
+    cursor: auto;
+  }
 }
 
 .App {
@@ -77,6 +68,7 @@
   height: 100dvh;
   width: 100vw;
   overflow: none;
+  cursor: none;
 }
 
 .content {
