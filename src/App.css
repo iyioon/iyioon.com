@@ -4,7 +4,7 @@
   left: 0;
   height: 100dvh;
   width: 100vw;
-  background-color: var(--background-color-dark);
+  background-color: black;
   color: white;
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@
   flex-direction: column;
   transition: opacity var(--transition-duration) var(--transition-curve);
   z-index: 1000;
+  cursor: none;
 }
 
 .loadingProgress {
@@ -83,7 +84,7 @@
     top var(--transition-duration) var(--transition-curve),
     height var(--transition-duration) var(--transition-curve);
   top: var(--navbar-height);
-  /* Hide scrollbar while maintaining functionality */
+  /* Hide scrollbar */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }

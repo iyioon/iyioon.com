@@ -7,6 +7,33 @@
   mix-blend-mode: difference;
   pointer-events: none;
   z-index: 1000;
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-duration) var(--transition-curve),
+    height var(--transition-duration) var(--transition-curve),
+    opacity var(--transition-duration) var(--transition-curve);
+}
+
+.mouseClickable {
+  width: 30px;
+  height: 30px;
+}
+
+.mousePressed {
+  width: 10px;
+  height: 10px;
+
+  /* width: 2px;
+  height: 20px;
+  border-radius: 1.5px;
+  transform: translate(-50%, -50%) scaleY(1.2); */
+}
+
+.mouseIdle {
+  opacity: 0;
+}
+
+.mouseOut {
+  display: none;
 }
 
 @media (hover: none) and (pointer: coarse) {

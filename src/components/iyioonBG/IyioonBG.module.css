@@ -1,0 +1,50 @@
+.aboutBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+}
+
+.aboutBGContent {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform var(--transition-duration) var(--transition-curve);
+  transform-style: preserve-3d;
+}
+
+.aboutBGContent h1 {
+  font-size: 350px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.3px;
+  line-height: 330px;
+  white-space: nowrap;
+  color: rgb(240, 240, 240);
+  transform-style: preserve-3d;
+}
+
+.aboutBGContentDark {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform var(--transition-duration) var(--transition-curve),
+    color var(--transition-duration) var(--transition-curve);
+  transform-style: preserve-3d;
+}
+
+.aboutBGContentDark h1 {
+  font-size: 350px;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.3px;
+  line-height: 330px;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+}

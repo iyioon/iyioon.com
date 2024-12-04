@@ -1,0 +1,53 @@
+.archive {
+  position: relative;
+  width: 100%;
+  color: rgb(226, 226, 226);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  background: var(--background-color-dark);
+  position: relative;
+  height: calc(100dvh - var(--navbar-height));
+  width: 100%;
+  font-size: 30dvh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-large);
+  overflow: hidden;
+}
+
+.titleFull {
+  height: 100dvh;
+  width: 100%;
+  font-size: 30dvh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-large);
+  overflow: hidden;
+}
+
+/* Tablet view (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 20dvh;
+  }
+
+  .titleFull {
+    font-size: 20dvh;
+  }
+}
+
+/* Mobile view (below 768px) */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 10dvh;
+  }
+
+  .titleFull {
+    font-size: 10dvh;
+  }
+}

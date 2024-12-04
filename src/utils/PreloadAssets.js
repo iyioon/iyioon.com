@@ -12,9 +12,13 @@ const homeAssets = importAll(
   require.context("../pages/home/assets", false, /\.(png|jpe?g|svg|mp4)$/)
 );
 
+const aboutAssets = importAll(
+  require.context("../pages/about/assets", false, /\.(png|jpe?g|svg|mp4|avif)$/)
+);
+
 // Add more assets from other directories as needed
 
-const allAssets = [...homeAssets];
+const allAssets = [...homeAssets, ...aboutAssets];
 
 const PreloadAssets = async (onProgress) => {
   const isDevMode = false;

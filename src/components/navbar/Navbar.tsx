@@ -12,15 +12,15 @@ const navitem = [
     subnav: [
       {
         name: "Archive",
-        link: "/project/archive",
+        link: "/projects/archive",
       },
       {
         name: "Design",
-        link: "/project/aesign",
+        link: "/projects/aesign",
       },
       {
         name: "Desktop",
-        link: "/project/aesktop",
+        link: "/projects/aesktop",
       },
     ],
   },
@@ -166,7 +166,7 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.top}>
-        <div className={`${styles.logo} hoverGlowText`}>
+        <div className={`${styles.logo}`}>
           <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
             iyioon
           </Link>

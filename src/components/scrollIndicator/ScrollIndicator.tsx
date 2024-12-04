@@ -2,9 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./ScrollIndicator.module.css";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 export default function ScrollIndicator() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   // Scroll percentage of the content
@@ -16,6 +18,9 @@ export default function ScrollIndicator() {
         const scrollTop = content.scrollTop;
         const viewportHeight = content.clientHeight;
         const totalHeight = content.scrollHeight;
+
+        // Check if scrolled from top
+        setIsScrolled(scrollTop > 0);
 
         // Calculate percentage based on how much of the bottom is visible
         const scrollBottom = scrollTop + viewportHeight;
@@ -45,6 +50,11 @@ export default function ScrollIndicator() {
 
   return (
     <div className={styles["scroll-indicator"]} onClick={scrollToTop}>
+      {isScrolled && (
+        <div className={styles.arrow}>
+          <ArrowDropUpIcon />
+        </div>
+      )}
       {scrollPercentage}%
     </div>
   );
