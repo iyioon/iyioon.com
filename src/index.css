@@ -16,14 +16,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevent overscroll/bounce in iOS MobileSafari and Chrome*/
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* Disable text highlight */
-  user-select: none; /* For modern browsers */
-  -webkit-user-select: none; /* For Safari */
-  -ms-user-select: none; /* For older IE browsers */
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Disable dragging for all images */
@@ -39,11 +45,12 @@ code {
 :root {
   --primary-color: #000000; /* Royal blue (traditional) */
   --secondary-color: #3e92cc; /* Celestial blue */
-  --accent-color: #d8315b; /* Cerise */
+  --accent-color: red;
   --background-color: #f8f8f8; /* White */
-  --background-color-dark: black;
+  --background-color-dark: #171717;
   --background-color-rgb: 248, 248, 248;
-  --text-color: #1e1b18; /* Eerie black */
+  --text-color: #171717;
+  --text-color-light: #f8f8f8; /* White */
   --text-gray: #6c757d; /* Davy's grey */
   --padding-large: 32px;
   --padding-medium: 16px;
