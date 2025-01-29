@@ -10,7 +10,6 @@ import IyioonBGDark from "./components/iyioonBG/IyioonBGDark";
 import Home from "./pages/home/Home";
 import Archive from "./pages/projects/project_archive/Project_archive";
 import About from "./pages/about/About";
-import Projects from "./pages/projects/Projects";
 
 function AppContent() {
   const [assets, setAssets] = useState({});
@@ -66,7 +65,7 @@ function AppContent() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home assets={assets} />} />
-          <Route path="/projects" element={<Projects assets={assets} />} />
+          {/* <Route path="/projects" element={<Projects assets={assets} />} /> */}
           <Route
             path="/projects/archive"
             element={<Archive assets={assets} />}
