@@ -13,7 +13,7 @@
   position: relative;
   height: calc(100dvh - var(--navbar-height));
   width: 100%;
-  font-size: 30dvh;
+  font-size: 12dvw;
   display: flex;
   flex-direction: column;
   padding: var(--padding-large);
@@ -23,7 +23,7 @@
 .titleFull {
   height: 100dvh;
   width: 100%;
-  font-size: 30dvh;
+  font-size: 12dvw;
   display: flex;
   flex-direction: column;
   padding: var(--padding-large);

@@ -32,14 +32,6 @@ const navitem = [
         name: "Artificial Intelligence",
         link: "/research/ai",
       },
-      {
-        name: "Machine Learning",
-        link: "/research/ml",
-      },
-      {
-        name: "Deep Learning",
-        link: "/research/dl",
-      },
     ],
   },
   {

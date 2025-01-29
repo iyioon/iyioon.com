@@ -9,10 +9,10 @@ function Archive({ assets }: ArchiveProps) {
   return (
     <div className={styles.archive}>
       <div className={styles.title}>
-        Collection <br />
-        of
+        DEVELOPMENT <br />
+        IN
       </div>
-      <div className={styles.titleFull}>Resources</div>
+      <div className={styles.titleFull}>PROGRESS</div>
     </div>
   );
 }
