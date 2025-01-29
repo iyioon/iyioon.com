@@ -7,11 +7,10 @@ import Mouse from "./components/mouse/Mouse";
 import ScrollIndicator from "./components/scrollIndicator/ScrollIndicator";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import IyioonBGDark from "./components/iyioonBG/IyioonBGDark";
-
 import Home from "./pages/home/Home";
-import Projects from "./pages/projects/Projects";
 import Archive from "./pages/projects/project_archive/Project_archive";
 import About from "./pages/about/About";
+import Projects from "./pages/projects/Projects";
 
 function AppContent() {
   const [assets, setAssets] = useState({});
