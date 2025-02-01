@@ -8,46 +8,63 @@
   align-items: center;
 }
 
-.title {
-  background: var(--background-color-dark);
-  position: relative;
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
   height: calc(100dvh - var(--navbar-height));
-  width: 100%;
-  font-size: 12dvw;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-large);
-  overflow: hidden;
+  z-index: -1;
+  animation: fadeIn 1s ease forwards;
 }
 
-.titleFull {
-  height: 100dvh;
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-size: 12dvw;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--background-color),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.title {
+  width: 100%;
+  height: calc(100dvh - var(--navbar-height));
   display: flex;
   flex-direction: column;
-  padding: var(--padding-large);
-  overflow: hidden;
+  justify-content: end;
+  align-items: start;
+  padding: calc(var(--padding-large) * 2);
+  font-size: 2em;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
   .title {
-    font-size: 20dvh;
-  }
-
-  .titleFull {
-    font-size: 20dvh;
+    font-size: 1.5em;
   }
 }
 
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 10dvh;
-  }
-
-  .titleFull {
-    font-size: 10dvh;
+    font-size: 1em;
   }
 }
