@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const navitem = [
   {
     name: "Projects",
-    link: "/projects",
+    link: "/projectsz",
     subnav: [
       {
         name: "Archive",
