@@ -21,7 +21,7 @@ function AppContent() {
   // Preload assets
   useEffect(() => {
     const loadAssets = async () => {
-      const result = await PreloadAssets((progress) => {
+      const result = await PreloadAssets((progress: number) => {
         setAssetLoadProgress(progress);
         console.log(progress);
       });

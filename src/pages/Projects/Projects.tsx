@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Projects.module.css";
-import ImageSizeDiv from "../../components/imageSizeDiv/ImageSizeDiv";
-import { getPreloadedAsset } from "../../utils/assetsUtils";
 import IyioonBG from "../../components/iyioonBG/IyioonBG";
 
 interface ProjectsProps {
