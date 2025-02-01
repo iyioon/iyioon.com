@@ -21,3 +21,18 @@
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
 }
+.project {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--padding-large);
+}
+
+.contents {
+  position: relative;
+  width: 100%;
+  height: calc(100dvh - var(--navbar-height));
+  overflow: hidden;
+}

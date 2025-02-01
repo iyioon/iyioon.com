@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Projects.module.css";
+import styles from "./Project.module.css";
 import IyioonBG from "../../components/iyioonBG/IyioonBG";
 
-interface ProjectsProps {
+interface ProjectProps {
   assets: { [key: string]: JSX.Element };
 }
 
-function Projects({ assets }: ProjectsProps) {
+function Project({ assets }: ProjectProps) {
   return (
-    <div className={`${styles.projects} zoomInFadeIn`}>
+    <div className={`${styles.project} zoomInFadeIn`}>
       <div className={styles.contents}>
         <IyioonBG />
       </div>
@@ -16,4 +16,4 @@ function Projects({ assets }: ProjectsProps) {
   );
 }
 
-export default Projects;
+export default Project;
