@@ -42,8 +42,20 @@
   justify-content: end;
   align-items: start;
   padding: calc(var(--padding-large) * 2);
-  font-size: 2em;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-size: 1.6em;
+}
+
+.title h1 {
+  background: linear-gradient(45deg, #ffffff, #77dfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  mix-blend-mode: difference;
+}
+
+.title p {
+  margin-top: calc(var(--padding-medium) / 2);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -65,6 +77,6 @@
 /* Mobile view (below 768px) */
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }

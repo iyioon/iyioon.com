@@ -20,9 +20,11 @@ function Archive({ assets }: ArchiveProps) {
           <div className={styles.bgOverlay} />
         </div>
         <div className={styles.title}>
-          KNOWLEDGE BASE <br />
-          TAILORED TO <br />
-          CAPTURE, ORGANIZE, AND ACCESS NOTES
+          <h1>ARCHIVE</h1>
+          <p>
+            Knowledge base <br />
+            tailored to capture, organize and access notes.
+          </p>
         </div>
       </div>
     </>
