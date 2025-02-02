@@ -5,6 +5,7 @@
   border-radius: 50%;
   background: white;
   mix-blend-mode: difference;
+  backdrop-filter: blur(10px);
   pointer-events: none;
   z-index: 1000;
   transform: translate(-50%, -50%);
@@ -16,6 +17,7 @@
 .mouseClickable {
   width: 30px;
   height: 30px;
+  backdrop-filter: blur(0px);
 }
 
 .mousePressed {
