@@ -72,6 +72,10 @@
   cursor: none;
 }
 
+.Appdark {
+  background-color: var(--background-color-dark);
+}
+
 .content {
   position: absolute;
   top: 0;

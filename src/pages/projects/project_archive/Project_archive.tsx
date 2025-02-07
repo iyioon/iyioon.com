@@ -1,17 +1,16 @@
 import React from "react";
 import styles from "./Project-archive.module.css";
 import { getPreloadedAsset } from "../../../utils/assetsUtils";
+import { useGlobal } from "../../../utils/globalContext";
 
-interface ArchiveProps {
-  assets: { [key: string]: JSX.Element };
-}
-
-function Archive({ assets }: ArchiveProps) {
+function Archive() {
+  const { globals } = useGlobal();
+  console.log(globals);
   return (
     <>
       <div className={`${styles.archive} zoomInFadeIn`}>
         <div className={styles.bg}>
-          {getPreloadedAsset(assets, "archiveBG.jpg", {
+          {getPreloadedAsset(globals.assets, "archiveBG.jpg", {
             width: "100%",
             height: "100%",
             objectFit: "cover",

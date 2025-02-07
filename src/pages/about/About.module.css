@@ -20,18 +20,6 @@
   padding: var(--padding-large);
 }
 
-.box {
-  border: 10px solid var(--background-color-dark);
-  font-size: min(5vw, 5vh);
-  height: calc(min(100dvh, 100dvw) * 0.5);
-  width: calc(min(100dvh, 100dvw) * 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: var(--padding-medium);
-  color: var(--background-color-dark);
-}
-
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
   .expSection {

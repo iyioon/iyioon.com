@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import IyioonBg from "../../components/iyioonBG/IyioonBG";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import { useGlobal } from "../../utils/globalContext";
 
-interface HomeProps {
-  assets: { [key: string]: JSX.Element };
-}
+function Home() {
+  const { globals, register } = useGlobal();
 
-const toggleFullScreen = () => {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
     }
-  }
-};
+  };
 
-function Home({ assets }: HomeProps) {
+  useEffect(() => {
+    globals.setNavbarStyle("light");
+  }, []);
+
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={styles.homeFirstPage}>
