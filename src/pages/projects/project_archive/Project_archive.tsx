@@ -5,7 +5,6 @@ import { useGlobal } from "../../../utils/globalContext";
 
 function Archive() {
   const { globals } = useGlobal();
-  console.log(globals);
   return (
     <>
       <div className={`${styles.archive} zoomInFadeIn`}>

@@ -17,10 +17,6 @@ function Home() {
     }
   };
 
-  useEffect(() => {
-    globals.setNavbarStyle("light");
-  }, []);
-
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={styles.homeFirstPage}>

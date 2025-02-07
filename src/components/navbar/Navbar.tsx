@@ -5,21 +5,42 @@ import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-interface NavItem {
-  name: string;
-  link: string;
-  subnav?: {
-    name: string;
-    link: string;
-  }[];
-}
+const navitem = [
+  {
+    name: "Projects",
+    link: "/projectsz",
+    subnav: [
+      {
+        name: "Archive",
+        link: "/projects/archive",
+      },
+      {
+        name: "Design",
+        link: "/projects/aesign",
+      },
+      {
+        name: "Desktop",
+        link: "/projects/aesktop",
+      },
+    ],
+  },
+  {
+    name: "Research",
+    link: "/research",
+    subnav: [
+      {
+        name: "Artificial Intelligence",
+        link: "/research/ai",
+      },
+    ],
+  },
+  {
+    name: "About",
+    link: "/about",
+  },
+];
 
-interface NavbarProps {
-  navitems: NavItem[];
-  colorScheme?: "dark" | "light";
-}
-
-function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
+function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeParentLink, setActiveParentLink] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,7 +75,7 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
     if (menuOpen) return;
 
     // Dont do anything if the current item does not have subnav
-    const item = navitems.find((item) => item.name === itemName);
+    const item = navitem.find((item) => item.name === itemName);
     if (!item?.subnav) return;
 
     // Else, set the hovered item and expand the navbar
@@ -122,7 +143,7 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   // If the parent link is active, set the active parent link
   // This is used to keep the parent link active when the user is on a subnav link
   const handleSubLinkClick = (link: string) => {
-    const parentLink = navitems.find((item) =>
+    const parentLink = navitem.find((item) =>
       item.subnav?.find((subItem) => subItem.link === link)
     )?.link;
 
@@ -135,19 +156,15 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   };
 
   return (
-    <div className={`${styles.navbar} ${styles[colorScheme]}`}>
+    <div className={styles.navbar}>
       <div className={styles.top}>
         <div className={`${styles.logo}`}>
-          <Link
-            to="/"
-            className={`${styles.logoLink}`}
-            onClick={handleLinkClick}
-          >
+          <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
             iyioon
           </Link>
         </div>
         <div className={styles.navlist}>
-          {navitems.map((item, index) => (
+          {navitem.map((item, index) => (
             <div
               key={index}
               className={`${styles.navitem} ${
@@ -194,7 +211,7 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
       >
         <div className={styles.subnavList}>
           {hoveredItem &&
-            navitems
+            navitem
               .find((item) => item.name === hoveredItem)
               ?.subnav?.map((subItem, index) => (
                 <div
@@ -235,7 +252,7 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
                 Home
               </NavLink>
             </div>
-            {navitems.map((item, index) => (
+            {navitem.map((item, index) => (
               <div key={index} className={styles.navitemMobile}>
                 <NavLink
                   to={item.link}

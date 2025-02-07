@@ -5,14 +5,6 @@ import { useGlobal } from "../../utils/globalContext";
 
 function About() {
   const { globals } = useGlobal();
-  const prevNavbarStyle = globals.navbarStyle;
-
-  useEffect(() => {
-    globals.setNavbarStyle("dark");
-    return () => {
-      globals.setNavbarStyle(prevNavbarStyle);
-    };
-  }, []);
 
   return (
     <div className={`${styles.about} zoomInFadeIn`}>

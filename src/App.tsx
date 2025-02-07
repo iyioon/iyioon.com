@@ -12,53 +12,16 @@ import Archive from "./pages/projects/project_archive/Project_archive";
 import About from "./pages/about/About";
 import { GlobalProvider, useGlobal } from "./utils/globalContext";
 
-const navitems = [
-  {
-    name: "Projects",
-    link: "/projects",
-    subnav: [
-      {
-        name: "Archive",
-        link: "/projects/archive",
-      },
-      {
-        name: "Design",
-        link: "/projects/aesign",
-      },
-      {
-        name: "Desktop",
-        link: "/projects/aesktop",
-      },
-    ],
-  },
-  {
-    name: "Research",
-    link: "/research",
-    subnav: [
-      {
-        name: "Artificial Intelligence",
-        link: "/research/ai",
-      },
-    ],
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-];
-
 function AppContent() {
   const [assets, setAssets] = useState({});
   const [isAssetsloading, setIsAssetsLoading] = useState(true);
   const [assetLoadProgress, setAssetLoadProgress] = useState(0);
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
   const [isLoadingDisappearing, setIsLoadingDisappearing] = useState(false);
-  const [navbarStyle, setNavbarStyle] = useState<"dark" | "light">("light");
 
   // Global context setup
   const { register } = useGlobal();
   useEffect(() => {
-    register("setNavbarStyle", setNavbarStyle);
     register("assets", assets);
   }, [assets]);
 
@@ -104,8 +67,8 @@ function AppContent() {
   }
 
   return (
-    <div className={`App ${"App" + navbarStyle}`}>
-      <Navbar navitems={navitems} colorScheme={navbarStyle} />
+    <div className={`App`}>
+      <Navbar />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />

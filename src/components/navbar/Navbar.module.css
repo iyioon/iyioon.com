@@ -3,17 +3,8 @@
   position: fixed;
   width: 100%;
   height: var(--navbar-height);
-  transition: opacity var(--transition-duration) var(--transition-curve),
-    visibility var(--transition-duration) var(--transition-curve),
-    transform var(--transition-duration) var(--transition-curve);
-  z-index: 100;
-  background-color: rgba(var(--background-color-rgb), 0.5);
-}
-
-.dark {
-  background-color: rgba(var(--background-color-dark-rgb), 1);
-  color: var(--text-color-light);
-  transition: height var(--transition-duration) var(--transition-curve),
+  transition: background-color var(--transition-duration)
+      var(--transition-curve),
     opacity var(--transition-duration) var(--transition-curve),
     visibility var(--transition-duration) var(--transition-curve),
     transform var(--transition-duration) var(--transition-curve);
@@ -28,6 +19,7 @@
 
 .navbarExpanded {
   height: 100dvh;
+  background-color: rgba(var(--background-color-rgb), 0.5);
   backdrop-filter: blur(10px);
 }
 
@@ -76,10 +68,6 @@
   transform: translate(0, -3px);
 }
 
-.dark .logoLink {
-  color: var(--text-color-light);
-}
-
 .rightspacing {
   font-family: Pacifico;
   display: flex;
@@ -116,27 +104,14 @@
   color: var(--primary-color);
 }
 
-.dark .navitemHovered {
-  color: var(--text-color-light);
-}
-
 .navLink {
   color: var(--text-color);
   text-decoration: none;
 }
 
-.dark .navLink {
-  color: var(--text-color-light);
-}
-
 .navLinkActive {
   color: var(--primary-color);
   font-weight: bold;
-}
-
-.dark .navLinkActive {
-  color: var(--text-color-light);
-  text-shadow: 0 0 10px var(--text-color-light);
 }
 
 .navLinkParentActive {
@@ -188,18 +163,9 @@
   text-decoration: none;
 }
 
-.dark .subnavLink {
-  color: var(--text-color-light);
-}
-
 .subnavLinkActive {
   color: var(--primary-color);
   font-weight: bold;
-}
-
-.dark .subnavLinkActive {
-  color: var(--text-color-light);
-  text-shadow: 0 0 10px var(--text-color-light);
 }
 
 /* Delay each item's animation */
@@ -273,18 +239,9 @@
   font-size: calc(var(--h1) + 30px);
 }
 
-.dark .navLinkMobile {
-  color: var(--text-color-light);
-}
-
 .navLinkActiveMobile {
   color: var(--primary-color);
   font-weight: bold;
-}
-
-.dark .navLinkActiveMobile {
-  color: var(--text-color-light);
-  text-shadow: 0 0 6px var(--text-color-light);
 }
 
 /* Tablet view (768px to 1024px) */
