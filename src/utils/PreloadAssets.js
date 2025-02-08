@@ -8,9 +8,9 @@ const importAll = (r) => {
   return r.keys().map((key) => ({ key: key.replace("./", ""), url: r(key) }));
 };
 
-const homeAssets = importAll(
-  require.context("../pages/home/assets", false, /\.(png|jpe?g|svg|mp4)$/)
-);
+// const homeAssets = importAll(
+//   require.context("../pages/home/assets", false, /\.(png|jpe?g|svg|mp4)$/)
+// );
 
 const aboutAssets = importAll(
   require.context("../pages/about/assets", false, /\.(png|jpe?g|svg|mp4|avif)$/)
@@ -26,12 +26,7 @@ const footerAssets = importAll(
 
 // Add more assets from other directories as needed
 
-const allAssets = [
-  ...homeAssets,
-  ...aboutAssets,
-  ...projectsAssets,
-  ...footerAssets,
-];
+const allAssets = [...aboutAssets, ...projectsAssets, ...footerAssets];
 
 const PreloadAssets = async (onProgress) => {
   const isDevMode = false;
