@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100dvh;
-  width: 100vw;
+  width: 100dvw;
   background-color: black;
   color: white;
   display: flex;
@@ -61,14 +61,14 @@
 }
 
 .App {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   color: var(--text-color);
   background-color: var(--background-color);
   height: 100dvh;
-  width: 100vw;
-  overflow: none;
+  width: 100dvw;
+  overflow: hidden;
   cursor: none;
 }
 
