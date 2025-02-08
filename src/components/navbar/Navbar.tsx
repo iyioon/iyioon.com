@@ -5,42 +5,45 @@ import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-const navitem = [
-  {
-    name: "Projects",
-    link: "/projectsz",
-    subnav: [
-      {
-        name: "Archive",
-        link: "/projects/archive",
-      },
-      {
-        name: "Design",
-        link: "/projects/aesign",
-      },
-      {
-        name: "Desktop",
-        link: "/projects/aesktop",
-      },
-    ],
-  },
-  {
-    name: "Research",
-    link: "/research",
-    subnav: [
-      {
-        name: "Artificial Intelligence",
-        link: "/research/ai",
-      },
-    ],
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-];
+interface SubNavItem {
+  name: string;
+  link: string;
+}
 
-function Navbar() {
+interface NavItem {
+  name: string;
+  link: string;
+  subnav?: SubNavItem[];
+}
+
+interface NavbarProps {
+  navitems: NavItem[];
+  colorScheme?: "light" | "dark";
+}
+
+/**
+ * Navigation bar component that supports both desktop and mobile views
+ * with dropdown subnavigation capabilities.
+ *
+ * @param {NavbarProps} props - The props for the Navbar component
+ * @param {NavItem[]} props.navitems - Array of navigation items to display
+ * @param {"light" | "dark"} [props.colorScheme="light"] - Color scheme for the navbar
+ *
+ * @example
+ * const items = [
+ *   {
+ *     name: "Products",
+ *     link: "/products",
+ *     subnav: [
+ *       { name: "Featured", link: "/products/featured" },
+ *       { name: "New", link: "/products/new" }
+ *     ]
+ *   }
+ * ];
+ *
+ * <Navbar navitems={items} colorScheme="dark" />
+ */
+function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeParentLink, setActiveParentLink] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -75,7 +78,7 @@ function Navbar() {
     if (menuOpen) return;
 
     // Dont do anything if the current item does not have subnav
-    const item = navitem.find((item) => item.name === itemName);
+    const item = navitems.find((item) => item.name === itemName);
     if (!item?.subnav) return;
 
     // Else, set the hovered item and expand the navbar
@@ -157,7 +160,7 @@ function Navbar() {
   // If the parent link is active, set the active parent link
   // This is used to keep the parent link active when the user is on a subnav link
   const handleSubLinkClick = (link: string) => {
-    const parentLink = navitem.find((item) =>
+    const parentLink = navitems.find((item) =>
       item.subnav?.find((subItem) => subItem.link === link)
     )?.link;
 
@@ -180,7 +183,7 @@ function Navbar() {
             </Link>
           </div>
           <div className={styles.navlist}>
-            {navitem.map((item, index) => (
+            {navitems.map((item, index) => (
               <div
                 key={index}
                 className={`${styles.navitem} ${
@@ -227,7 +230,7 @@ function Navbar() {
         >
           <div className={styles.subnavList}>
             {hoveredItem &&
-              navitem
+              navitems
                 .find((item) => item.name === hoveredItem)
                 ?.subnav?.map((subItem, index) => (
                   <div
@@ -268,7 +271,7 @@ function Navbar() {
                   Home
                 </NavLink>
               </div>
-              {navitem.map((item, index) => (
+              {navitems.map((item, index) => (
                 <div key={index} className={styles.navitemMobile}>
                   <NavLink
                     to={item.link}

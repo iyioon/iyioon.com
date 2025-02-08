@@ -12,6 +12,41 @@ import Archive from "./pages/projects/project_archive/Project_archive";
 import About from "./pages/about/About";
 import { GlobalProvider, useGlobal } from "./utils/globalContext";
 
+const navitems = [
+  {
+    name: "Projects",
+    link: "/projectsz",
+    subnav: [
+      {
+        name: "Archive",
+        link: "/projects/archive",
+      },
+      {
+        name: "Design",
+        link: "/projects/aesign",
+      },
+      {
+        name: "Desktop",
+        link: "/projects/aesktop",
+      },
+    ],
+  },
+  {
+    name: "Research",
+    link: "/research",
+    subnav: [
+      {
+        name: "Artificial Intelligence",
+        link: "/research/ai",
+      },
+    ],
+  },
+  {
+    name: "About",
+    link: "/about",
+  },
+];
+
 function AppContent() {
   const [assets, setAssets] = useState({});
   const [isAssetsloading, setIsAssetsLoading] = useState(true);
@@ -68,7 +103,7 @@ function AppContent() {
 
   return (
     <div className={`App`}>
-      <Navbar />
+      <Navbar navitems={navitems} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
