@@ -1,6 +1,8 @@
 .archive {
   position: relative;
   width: 100%;
+  height: 100dvh;
+  overflow: hidden;
   color: rgb(226, 226, 226);
   display: flex;
   flex-direction: column;
@@ -13,7 +15,7 @@
   top: 0;
   left: 0;
   width: 100dvw;
-  height: calc(100dvh - var(--navbar-height));
+  height: 100dvh;
   z-index: -1;
   animation: fadeIn 1s ease forwards;
 }
@@ -36,7 +38,7 @@
 
 .title {
   width: 100%;
-  height: calc(100dvh - var(--navbar-height));
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: end;

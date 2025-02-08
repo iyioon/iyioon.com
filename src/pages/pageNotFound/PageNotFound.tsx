@@ -9,12 +9,12 @@ function PageNotFound() {
       `.${scrollIndicatorStyles["scroll-indicator"]}`
     );
     if (scrollIndicator) {
-      console.log("Removing scroll indicator");
+      // console.log("Removing scroll indicator");
       scrollIndicator.setAttribute("style", "display: none");
 
       // Cleanup function that runs when component unmounts
       return () => {
-        console.log("Restoring scroll indicator");
+        // console.log("Restoring scroll indicator");
         scrollIndicator.setAttribute("style", "display: block");
       };
     }

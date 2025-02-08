@@ -6,7 +6,7 @@
 .homeFirstPage {
   position: relative;
   width: 100%;
-  height: calc(100dvh - var(--navbar-height));
+  height: 100dvh;
   overflow: hidden;
 }
 

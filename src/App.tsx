@@ -53,12 +53,18 @@ function AppContent() {
   const [assetLoadProgress, setAssetLoadProgress] = useState(0);
   const [showLoadingScreen, setShowLoadingScreen] = useState(true);
   const [isLoadingDisappearing, setIsLoadingDisappearing] = useState(false);
+  const [navbarColor, setNavbarColor] = useState<"light" | "dark">("light");
 
   // Global context setup
   const { register } = useGlobal();
   useEffect(() => {
     register("assets", assets);
   }, [assets]);
+
+  useEffect(() => {
+    register("navbarColor", navbarColor);
+    register("setNavbarColor", setNavbarColor);
+  }, []);
 
   // Preload assets
   useEffect(() => {
@@ -103,7 +109,7 @@ function AppContent() {
 
   return (
     <div className={`App`}>
-      <Navbar navitems={navitems} />
+      <Navbar navitems={navitems} colorScheme={navbarColor} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />

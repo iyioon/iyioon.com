@@ -76,14 +76,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100% - var(--navbar-height));
+  height: 100%;
   width: 100%;
   overflow-y: auto;
   scroll-behavior: smooth;
-  transition: transform var(--transition-duration) var(--transition-curve),
-    top var(--transition-duration) var(--transition-curve),
-    height var(--transition-duration) var(--transition-curve);
-  top: var(--navbar-height);
+  transition: transform var(--transition-duration) var(--transition-curve);
   /* Hide scrollbar */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

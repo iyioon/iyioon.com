@@ -173,29 +173,28 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   };
 
   return (
-    <>
+    <div className={`${styles.navbar} ${styles[colorScheme]}`}>
       <div className={styles.navbarOverlay} />
-      <div className={styles.navbar}>
-        <div className={styles.top}>
-          <div className={`${styles.logo}`}>
-            <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
-              iyioon
-            </Link>
-          </div>
-          <div className={styles.navlist}>
-            {navitems.map((item, index) => (
-              <div
-                key={index}
-                className={`${styles.navitem} ${
-                  hoveredItem === item.name ? styles.navitemHovered : ""
-                }`}
-                onMouseEnter={() => handleMouseEnter(item.name)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <NavLink
-                  to={item.link}
-                  className={({ isActive }) =>
-                    `${styles.navLink} ${isActive ? styles.navLinkActive : ""}
+      <div className={styles.top}>
+        <div className={`${styles.logo}`}>
+          <Link to="/" className={styles.logoLink} onClick={handleLinkClick}>
+            iyioon
+          </Link>
+        </div>
+        <div className={styles.navlist}>
+          {navitems.map((item, index) => (
+            <div
+              key={index}
+              className={`${styles.navitem} ${
+                hoveredItem === item.name ? styles.navitemHovered : ""
+              }`}
+              onMouseEnter={() => handleMouseEnter(item.name)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <NavLink
+                to={item.link}
+                className={({ isActive }) =>
+                  `${styles.navLink} ${isActive ? styles.navLinkActive : ""}
                 ${
                   // If one of the child links is active,
                   // keep the parent link active but with a different style
@@ -204,93 +203,92 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
                     : ""
                 }
                 `
+                }
+                onClick={handleLinkClick}
+              >
+                {item.name}
+              </NavLink>
+            </div>
+          ))}
+        </div>
+        <div className={styles.menuButton} onClick={toggleMenu}>
+          {menuOpen ? (
+            <CloseIcon fontSize="inherit" />
+          ) : (
+            <MenuIcon fontSize="inherit" />
+          )}
+        </div>
+        <div className={styles.rightspacing}>iyioon</div>
+      </div>
+
+      {/* For subnav */}
+      <div
+        className={styles.bottom}
+        onMouseEnter={() => handleMouseEnter(hoveredItem || "")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={styles.subnavList}>
+          {hoveredItem &&
+            navitems
+              .find((item) => item.name === hoveredItem)
+              ?.subnav?.map((subItem, index) => (
+                <div
+                  // Force re-render when the hovered item changes by
+                  // adding the hovered item to the key.
+                  // key={`${index}-${hoveredItem}`}
+                  key={index}
+                  className={styles.subnavItem}
+                >
+                  <NavLink
+                    to={subItem.link}
+                    onClick={() => handleSubLinkClick(subItem.link)}
+                    className={({ isActive }) =>
+                      `${styles.subnavLink} ${
+                        isActive ? styles.subnavLinkActive : ""
+                      }`
+                    }
+                  >
+                    {subItem.name}
+                  </NavLink>
+                </div>
+              ))}
+        </div>
+
+        {/* For mobile menu */}
+        {menuOpen && (
+          <div className={styles.navlistMobile}>
+            <div className={styles.navitemMobile}>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${styles.navLinkMobile} ${
+                    isActive ? styles.navLinkActiveMobile : ""
+                  }`
+                }
+                onClick={handleLinkClick}
+              >
+                Home
+              </NavLink>
+            </div>
+            {navitems.map((item, index) => (
+              <div key={index} className={styles.navitemMobile}>
+                <NavLink
+                  to={item.link}
+                  className={({ isActive }) =>
+                    `${styles.navLinkMobile} ${
+                      isActive ? styles.navLinkActiveMobile : ""
+                    }`
                   }
-                  onClick={handleLinkClick}
+                  onClick={toggleMenu}
                 >
                   {item.name}
                 </NavLink>
               </div>
             ))}
           </div>
-          <div className={styles.menuButton} onClick={toggleMenu}>
-            {menuOpen ? (
-              <CloseIcon fontSize="inherit" />
-            ) : (
-              <MenuIcon fontSize="inherit" />
-            )}
-          </div>
-          <div className={styles.rightspacing}>iyioon</div>
-        </div>
-
-        {/* For subnav */}
-        <div
-          className={styles.bottom}
-          onMouseEnter={() => handleMouseEnter(hoveredItem || "")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className={styles.subnavList}>
-            {hoveredItem &&
-              navitems
-                .find((item) => item.name === hoveredItem)
-                ?.subnav?.map((subItem, index) => (
-                  <div
-                    // Force re-render when the hovered item changes by
-                    // adding the hovered item to the key.
-                    // key={`${index}-${hoveredItem}`}
-                    key={index}
-                    className={styles.subnavItem}
-                  >
-                    <NavLink
-                      to={subItem.link}
-                      onClick={() => handleSubLinkClick(subItem.link)}
-                      className={({ isActive }) =>
-                        `${styles.subnavLink} ${
-                          isActive ? styles.subnavLinkActive : ""
-                        }`
-                      }
-                    >
-                      {subItem.name}
-                    </NavLink>
-                  </div>
-                ))}
-          </div>
-
-          {/* For mobile menu */}
-          {menuOpen && (
-            <div className={styles.navlistMobile}>
-              <div className={styles.navitemMobile}>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `${styles.navLinkMobile} ${
-                      isActive ? styles.navLinkActiveMobile : ""
-                    }`
-                  }
-                  onClick={handleLinkClick}
-                >
-                  Home
-                </NavLink>
-              </div>
-              {navitems.map((item, index) => (
-                <div key={index} className={styles.navitemMobile}>
-                  <NavLink
-                    to={item.link}
-                    className={({ isActive }) =>
-                      `${styles.navLinkMobile} ${
-                        isActive ? styles.navLinkActiveMobile : ""
-                      }`
-                    }
-                    onClick={toggleMenu}
-                  >
-                    {item.name}
-                  </NavLink>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
