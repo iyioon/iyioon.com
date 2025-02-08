@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: left;
   overflow: visible;
+  background-color: var(--background-color-dark);
 }
 
 /* ---------------Experience--------------- */

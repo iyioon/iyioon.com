@@ -11,6 +11,21 @@
   z-index: 100;
 }
 
+/* Determines the color of the navbar */
+.navbarOverlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: var(--navbar-height);
+  background-color: rgba(var(--background-color-rgb), 1);
+  transition: opacity var(--transition-duration) var(--transition-curve);
+}
+
+.navbarOverlayActive {
+  opacity: 0;
+}
+
 .navbarScrolled {
   opacity: 0;
   visibility: hidden;
