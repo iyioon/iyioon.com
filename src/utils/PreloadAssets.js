@@ -20,9 +20,18 @@ const projectsAssets = importAll(
   require.context("../pages/projects/assets", false, /\.(png|jpe?g|svg|mp4)$/)
 );
 
+const footerAssets = importAll(
+  require.context("../components/footer/assets", false, /\.(png|jpe?g|svg)$/)
+);
+
 // Add more assets from other directories as needed
 
-const allAssets = [...homeAssets, ...aboutAssets, ...projectsAssets];
+const allAssets = [
+  ...homeAssets,
+  ...aboutAssets,
+  ...projectsAssets,
+  ...footerAssets,
+];
 
 const PreloadAssets = async (onProgress) => {
   const isDevMode = false;

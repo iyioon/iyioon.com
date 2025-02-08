@@ -22,6 +22,13 @@ export default function Mouse() {
         // Check if the cursor style is 'pointer'
         const computedStyle = getComputedStyle(elementUnderCursor);
         setIsClickable(computedStyle.cursor === "pointer");
+
+        // Or check if the elemtent has class 'clickable'
+        if (elementUnderCursor.classList.contains("clickable")) {
+          setIsClickable(true);
+        } else {
+          setIsClickable(computedStyle.cursor === "pointer");
+        }
       } else {
         setIsClickable(false);
       }
