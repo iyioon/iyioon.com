@@ -7,33 +7,29 @@ import { getPreloadedAsset } from "../../utils/assetsUtils";
 const timeline = [
   {
     year: 2021,
-    title: "Title 1",
-    description: "Description 1",
+    title: "North London Collegiate School Jeju",
+    description: "Aug 2013 - May 2021\nIB Diploma 44/45",
     imgLink: "2021.jpg",
   },
   {
     year: 2022,
-    title: "Title 2",
-    description: "Description 2",
+    title: "National University of Singapore",
+    description: "Expected May 2026\nBachelor of Computing in Computer Science",
     imgLink: "2022.jpg",
   },
   {
     year: 2023,
-    title: "Title 3",
-    description: "Description 3",
+    title: "MedySapiens",
+    description:
+      "Internship: May - June 2023\nRedesign of the MedySapiens website using Next.js",
     imgLink: "2023.jpg",
   },
   {
     year: 2024,
-    title: "Title 4",
-    description: "Description 4",
+    title: "NUS INFORMATION TECHNOLOGY",
+    description:
+      "Internship: May 2025 - Current\nCyber Security eLearning module development using React",
     imgLink: "2024.jpg",
-  },
-  {
-    year: 2025,
-    title: "Title 5",
-    description: "Description 5",
-    imgLink: "2025.jpg",
   },
 ];
 

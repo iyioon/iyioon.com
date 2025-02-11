@@ -21,13 +21,7 @@ function Home() {
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={styles.homeFirstPage}>
         <IyioonBg />
-        <div className={styles.homeFirstPageContent}>
-          <h1 onClick={toggleFullScreen}>???</h1>
-          <div className={styles.underDevelopment}>
-            Under Development
-            <ConstructionIcon />
-          </div>
-        </div>
+        <div className={styles.homeFirstPageContent}></div>
       </div>
     </div>
   );

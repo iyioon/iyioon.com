@@ -22,14 +22,6 @@
   align-items: center;
 }
 
-.underDevelopment {
-  color: var(--text-gray);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--padding-small);
-}
-
 /* Tablet view (768px to 1024px) */
 @media screen and (max-width: 1024px) {
 }
