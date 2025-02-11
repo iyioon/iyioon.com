@@ -5,6 +5,7 @@
   overflow: hidden;
   width: 100%;
   z-index: -1;
+  font-family: "Pacifico", cursive;
 }
 
 .aboutBGContent {
@@ -47,4 +48,5 @@
   line-height: 330px;
   white-space: nowrap;
   transform-style: preserve-3d;
+  color: rgb(30, 30, 30);
 }

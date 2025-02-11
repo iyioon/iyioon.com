@@ -47,6 +47,8 @@ const navitems = [
   },
 ];
 
+const version = "0.4.0";
+
 function AppContent() {
   const [assets, setAssets] = useState({});
   const [isAssetsloading, setIsAssetsLoading] = useState(true);
@@ -97,7 +99,12 @@ function AppContent() {
     return (
       <div className={`loading ${isLoadingDisappearing ? "loading-hide" : ``}`}>
         {/* <div className="loadingProgress">{assetLoadProgress.toFixed(2)}%</div> */}
-        <div className="loadingBottomText">
+        <div
+          className={`loadingBottomText ${
+            isLoadingDisappearing ? "loadingText-hide" : ``
+          }`}
+        >
+          <p>v{version}</p>
           <p>LOADING... {assetLoadProgress.toFixed(2)}%</p>
           <p>MOON JI HOON - PORTFOLIO</p>
         </div>
