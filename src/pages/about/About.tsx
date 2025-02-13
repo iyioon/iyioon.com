@@ -78,6 +78,16 @@ function About() {
   return (
     <div className={`${styles.about} zoomInFadeIn`}>
       <div className={styles.expSection}>
+        <div className={styles.paper}>
+          {getPreloadedAsset(globals.assets, "paperblack.jpg", {
+            width: "100%",
+            height: "100%",
+            objectFit: "fill",
+            objectPosition: "center",
+            filter: "grayscale(100%)",
+          })}
+          <div className={styles.paperOverlay} />
+        </div>
         <div className={styles.dates}>
           {timeline.map((event) => (
             <div

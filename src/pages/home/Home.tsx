@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Home.module.css";
-import IyioonBg from "../../components/iyioonBG/IyioonBG";
-import ConstructionIcon from "@mui/icons-material/Construction";
 import { useGlobal } from "../../utils/globalContext";
+import { getPreloadedAsset } from "../../utils/assetsUtils";
 
 function Home() {
   const { globals, register } = useGlobal();
@@ -19,9 +18,30 @@ function Home() {
 
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
-      <div className={styles.homeFirstPage}>
-        <IyioonBg />
-        <div className={styles.homeFirstPageContent}></div>
+      <div className={styles.paper}>
+        {getPreloadedAsset(globals.assets, "paper.jpg", {
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          filter: "grayscale(100%)",
+        })}
+        <div className={styles.paperOverlay} />
+      </div>
+
+      <div className={styles.titleHolder}>
+        <div className={styles.title}>
+          {getPreloadedAsset(globals.assets, "signature.svg", {
+            width: "100%",
+            height: "100%",
+            border: "1px solid red",
+            transform: "scale(1.5)",
+          })}
+        </div>
+        <div className={styles.subtitle}>PORTFOLIO SINCE 2021</div>
+        <div className={styles.description}>
+          Website under redesign. Please check back later.
+        </div>
       </div>
     </div>
   );

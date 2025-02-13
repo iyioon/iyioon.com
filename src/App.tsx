@@ -89,8 +89,8 @@ function AppContent() {
         // Wait for loading screen animation to finish
         setTimeout(() => {
           setShowLoadingScreen(false);
-        }, 500);
-      }, 1000);
+        }, 1000); // Make sure this equals --transition-duration
+      }, 500);
     }
   }, [isAssetsloading]);
 

@@ -22,6 +22,29 @@
   padding: var(--padding-large);
 }
 
+.paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.paperOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--background-color-dark-rgb), 0.7);
+  background-image: linear-gradient(
+    to top,
+    var(--background-color-dark) 5%,
+    transparent
+  );
+}
+
 .dates {
   color: var(--text-gray);
   display: flex;

@@ -70,6 +70,6 @@ code {
   --navbar-height: 50px;
 
   /* Animation properties */
-  --transition-duration: 1s;
+  --transition-duration: 2s;
   --transition-curve: cubic-bezier(0.16, 1, 0.3, 1);
 }
