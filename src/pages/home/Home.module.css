@@ -43,6 +43,7 @@
 .subtitle {
   margin-bottom: var(--padding-medium);
   margin-top: var(--padding-medium);
+  font-family: "Pacifico", cursive;
 }
 
 /* Tablet view (768px to 1024px) */

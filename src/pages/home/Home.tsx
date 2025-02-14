@@ -38,10 +38,7 @@ function Home() {
             transform: "scale(1.5)",
           })}
         </div>
-        <div className={styles.subtitle}>PORTFOLIO SINCE 2021</div>
-        <div className={styles.description}>
-          Website under redesign. Please check back later.
-        </div>
+        <div className={styles.subtitle}>Studying Computer Science</div>
       </div>
     </div>
   );
