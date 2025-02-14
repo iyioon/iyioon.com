@@ -22,7 +22,7 @@ function Home() {
         {getPreloadedAsset(globals.assets, "paper.jpg", {
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          objectFit: "fill",
           objectPosition: "center",
           filter: "grayscale(100%)",
         })}
