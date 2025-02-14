@@ -16,6 +16,39 @@ function Home() {
     }
   };
 
+  const list = [
+    {
+      title: "Some Title",
+      description: "03-01",
+      link: "/projects",
+    },
+    {
+      title: "Some Title",
+      description: "03-02",
+      link: "/research",
+    },
+    {
+      title: "Some Title",
+      description: "03-03",
+      link: "/about",
+    },
+    {
+      title: "Some Title",
+      description: "03-01",
+      link: "/projects",
+    },
+    {
+      title: "Some Title",
+      description: "03-02",
+      link: "/research",
+    },
+    {
+      title: "Some Title",
+      description: "03-03",
+      link: "/about",
+    },
+  ];
+
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={styles.paper}>
@@ -38,7 +71,24 @@ function Home() {
             transform: "scale(1.5)",
           })}
         </div>
-        <div className={styles.subtitle}>Studying Computer Science</div>
+        <div className={styles.subtitle}>WEBDESIGNER & DEVELOPER</div>
+      </div>
+
+      <div className={styles.menu}>
+        <div className={styles.menuCol}>
+          {list.map((item, index) => (
+            <p key={index}> {item.title}</p>
+          ))}
+        </div>
+
+        <div className={styles.menuCol}>
+          {list.map((item, index) => (
+            <p className={styles.menuDesc} key={index}>
+              {" "}
+              {item.description}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
