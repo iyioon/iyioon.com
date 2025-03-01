@@ -6,7 +6,6 @@
   height: 100dvh;
   overflow: hidden;
   color: rgb(226, 226, 226);
-  font-family: "Indie Flower", cursive;
 }
 
 .bg {
@@ -16,7 +15,20 @@
   width: 100dvw;
   height: 100dvh;
   z-index: -1;
-  animation: fadeIn 1s ease forwards;
+  animation: fadeIn var(--transition-duration) var(--transition-curve) forwards,
+    breathe 25s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .bgOverlay {
@@ -40,14 +52,27 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: start;
   padding: calc(var(--padding-large) * 2);
   font-size: 1.6em;
-  background: linear-gradient(to top, black 0%, transparent 100%);
-  pointer-events: none;
+  background: linear-gradient(to top, black 0%, transparent 80%);
+}
+
+.navbarBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--navbar-height) * 3);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    transparent 50%
+  );
 }
 
 .title h1 {
@@ -63,18 +88,29 @@
   margin-top: calc(var(--padding-medium) / 2);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 1;
+  font-weight: 700;
+  font-style: italic;
 }
 
-a {
+.title a {
   color: rgb(226, 226, 226);
   text-decoration: none;
   font-size: 0.9em;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   margin-top: var(--padding-medium);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   pointer-events: auto;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.title a:hover {
+  background: linear-gradient(45deg, #ffffff, #77dfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @keyframes fadeIn {
@@ -97,6 +133,7 @@ a {
 @media screen and (max-width: 768px) {
   .title {
     font-size: 1.3em;
+    padding: calc(var(--padding-large));
   }
 }
 
@@ -113,12 +150,11 @@ a {
 
 .embeddedSite {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 50px); /* Make iframe 20px taller */
   border: none;
   position: absolute;
-  top: var(--navbar-height);
+  top: -50px;
   left: 0;
-  border-radius: 6px;
   mix-blend-mode: screen;
   filter: invert(100%) hue-rotate(180deg) brightness(1.2) contrast(1);
   background-color: transparent;

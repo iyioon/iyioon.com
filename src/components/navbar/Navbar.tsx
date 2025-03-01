@@ -289,21 +289,24 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
                 Home
               </NavLink>
             </div>
-            {navitems.map((item, index) => (
-              <div key={index} className={styles.navitemMobile}>
-                <NavLink
-                  to={item.link}
-                  className={({ isActive }) =>
-                    `${styles.navLinkMobile} ${
-                      isActive ? styles.navLinkActiveMobile : ""
-                    }`
-                  }
-                  onClick={toggleMenu}
-                >
-                  {item.name}
-                </NavLink>
-              </div>
-            ))}
+            {navitems.map(
+              (item, index) =>
+                item.link && (
+                  <div key={index} className={styles.navitemMobile}>
+                    <NavLink
+                      to={item.link}
+                      className={({ isActive }) =>
+                        `${styles.navLinkMobile} ${
+                          isActive ? styles.navLinkActiveMobile : ""
+                        }`
+                      }
+                      onClick={toggleMenu}
+                    >
+                      {item.name}
+                    </NavLink>
+                  </div>
+                )
+            )}
           </div>
         )}
       </div>

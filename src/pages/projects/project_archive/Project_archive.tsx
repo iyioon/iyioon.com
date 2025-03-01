@@ -40,6 +40,7 @@ function Archive() {
             loading="lazy"
           />
         </div>
+        <div className={styles.navbarBG} />
         <div className={styles.title}>
           <h1>ARCHIVE </h1>
           <p>
