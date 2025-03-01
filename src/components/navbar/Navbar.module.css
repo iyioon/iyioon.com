@@ -80,13 +80,15 @@
   align-items: center;
   padding-left: var(--padding-small);
   padding-right: var(--padding-small);
-  font-size: var(--h4);
 }
 
 .logoLink {
   color: var(--text-color);
   text-decoration: none;
   transform: translate(0, -3px);
+  font-size: var(--h4);
+  margin: 0;
+  padding: 0;
 }
 
 .dark .logoLink {
@@ -114,7 +116,6 @@
 
 .navitem {
   cursor: pointer;
-  font-size: var(--h5);
   height: var(--navbar-height);
   display: flex;
   justify-content: center;
@@ -135,7 +136,10 @@
 
 .navLink {
   color: var(--text-color);
+  font-size: var(--h5);
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .dark .navLink {
@@ -192,7 +196,6 @@
 }
 
 .subnavItem {
-  font-size: var(--h4);
   cursor: pointer;
   padding: var(--padding-small);
   opacity: 0;
@@ -204,6 +207,7 @@
 .subnavLink {
   color: var(--text-color);
   text-decoration: none;
+  font-size: var(--h4);
 }
 
 .dark .subnavLink {
@@ -355,7 +359,7 @@
     display: none;
   }
 
-  .logo {
+  .logoLink {
     font-size: var(--h3);
   }
 }
@@ -393,7 +397,7 @@
     display: none;
   }
 
-  .logo {
+  .logoLink {
     font-size: var(--h3);
   }
 }

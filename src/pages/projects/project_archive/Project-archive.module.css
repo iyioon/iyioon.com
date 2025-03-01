@@ -1,13 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .archive {
   position: relative;
   width: 100%;
   height: 100dvh;
   overflow: hidden;
   color: rgb(226, 226, 226);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-family: "Indie Flower", cursive;
 }
 
 .bg {
@@ -37,14 +36,18 @@
 }
 
 .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: start;
   padding: calc(var(--padding-large) * 2);
   font-size: 1.6em;
+  background: linear-gradient(to top, black 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .title h1 {
@@ -52,12 +55,26 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  mix-blend-mode: difference;
+  z-index: 1;
+  font-family: "Pacifico", cursive;
 }
 
 .title p {
   margin-top: calc(var(--padding-medium) / 2);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  font-size: 0.9em;
+  text-decoration: underline;
+  margin-top: var(--padding-medium);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: auto;
 }
 
 @keyframes fadeIn {
@@ -81,4 +98,28 @@
   .title {
     font-size: 1.3em;
   }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.embeddedSite {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: var(--navbar-height);
+  left: 0;
+  border-radius: 6px;
+  mix-blend-mode: screen;
+  filter: invert(100%) hue-rotate(180deg) brightness(1.2) contrast(1);
+  background-color: transparent;
 }

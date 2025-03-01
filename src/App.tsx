@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,32 +15,24 @@ import { GlobalProvider, useGlobal } from "./utils/globalContext";
 const navitems = [
   {
     name: "Projects",
-    link: "/projectsz",
+    link: "",
     subnav: [
       {
         name: "Archive",
         link: "/projects/archive",
       },
-      {
-        name: "Design",
-        link: "/projects/aesign",
-      },
-      {
-        name: "Desktop",
-        link: "/projects/aesktop",
-      },
     ],
   },
-  {
-    name: "Research",
-    link: "/research",
-    subnav: [
-      {
-        name: "Artificial Intelligence",
-        link: "/research/ai",
-      },
-    ],
-  },
+  // {
+  //   name: "Research",
+  //   link: "/research",
+  //   subnav: [
+  //     {
+  //       name: "Artificial Intelligence",
+  //       link: "/research/ai",
+  //     },
+  //   ],
+  // },
   {
     name: "About",
     link: "/about",

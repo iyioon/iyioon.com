@@ -9,9 +9,8 @@
   pointer-events: none;
   z-index: 1000;
   transform: translate(-50%, -50%);
-  transition: width var(--transition-duration) var(--transition-curve),
-    height var(--transition-duration) var(--transition-curve),
-    opacity var(--transition-duration) var(--transition-curve);
+  transition: width 1s var(--transition-curve),
+    height 1s var(--transition-curve), opacity 1s var(--transition-curve);
 }
 
 .mouseClickable {

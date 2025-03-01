@@ -52,13 +52,13 @@ function Home() {
   return (
     <div className={`${styles.home} zoomInFadeIn`}>
       <div className={styles.paper}>
-        {getPreloadedAsset(globals.assets, "paper.jpg", {
+        {/* {getPreloadedAsset(globals.assets, "paper.jpg", {
           width: "100%",
           height: "100%",
           objectFit: "fill",
           objectPosition: "center",
           filter: "grayscale(100%)",
-        })}
+        })} */}
         <div className={styles.paperOverlay} />
       </div>
 
@@ -71,10 +71,10 @@ function Home() {
             transform: "scale(1.5)",
           })}
         </div>
-        <div className={styles.subtitle}>WEBDESIGNER & DEVELOPER</div>
+        <div className={styles.subtitle}>Under Development</div>
       </div>
 
-      <div className={styles.menu}>
+      {/* <div className={styles.menu}>
         <div className={styles.menuCol}>
           {list.map((item, index) => (
             <p key={index}> {item.title}</p>
@@ -89,7 +89,7 @@ function Home() {
             </p>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -45,7 +45,7 @@ interface NavbarProps {
  */
 function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [activeParentLink, setActiveParentLink] = useState<string | null>(null);
+  const [activeParentName, setActiveParentName] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   // If the content is scrolled, change the navbar style
@@ -123,7 +123,7 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
 
   const handleLinkClick = () => {
     // Reset the navbar to its original state
-    setActiveParentLink(null);
+    setActiveParentName(null);
 
     // For mobile menu
     setMenuOpen(false);
@@ -160,12 +160,12 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
   // If the parent link is active, set the active parent link
   // This is used to keep the parent link active when the user is on a subnav link
   const handleSubLinkClick = (link: string) => {
-    const parentLink = navitems.find((item) =>
+    const parentName = navitems.find((item) =>
       item.subnav?.find((subItem) => subItem.link === link)
-    )?.link;
+    )?.name;
 
-    if (parentLink) {
-      setActiveParentLink(parentLink);
+    if (parentName) {
+      setActiveParentName(parentName);
     }
 
     // Reset the navbar to its original state
@@ -191,23 +191,42 @@ function Navbar({ navitems, colorScheme = "light" }: NavbarProps) {
               onMouseEnter={() => handleMouseEnter(item.name)}
               onMouseLeave={handleMouseLeave}
             >
-              <NavLink
-                to={item.link}
-                className={({ isActive }) =>
-                  `${styles.navLink} ${isActive ? styles.navLinkActive : ""}
-                ${
-                  // If one of the child links is active,
-                  // keep the parent link active but with a different style
-                  item.link === activeParentLink
-                    ? styles.navLinkParentActive
-                    : ""
-                }
-                `
-                }
-                onClick={handleLinkClick}
-              >
-                {item.name}
-              </NavLink>
+              {
+                // If the item has a link ie not ""
+                item.link ? (
+                  <NavLink
+                    to={item.link}
+                    className={({ isActive }) =>
+                      `${styles.navLink} ${isActive ? styles.navLinkActive : ""}
+                  ${
+                    // If one of the child links is active,
+                    // keep the parent link active but with a different style
+                    item.name === activeParentName
+                      ? styles.navLinkParentActive
+                      : ""
+                  }
+                  `
+                    }
+                    onClick={handleLinkClick}
+                  >
+                    {item.name}
+                  </NavLink>
+                ) : (
+                  <div
+                    className={`${styles.navLink} 
+                  ${
+                    // If one of the child links is active,
+                    // keep the parent link active but with a different style
+                    item.name === activeParentName
+                      ? styles.navLinkParentActive
+                      : ""
+                  }
+                  `}
+                  >
+                    {item.name}
+                  </div>
+                )
+              }
             </div>
           ))}
         </div>
